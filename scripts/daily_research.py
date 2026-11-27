@@ -143,12 +143,23 @@ def main():
     else:
         DB={"sources":SOURCES,"items":[],"debates":[],"runs":[],"briefing":{"current":{}}}
     DB["sources"]=SOURCES
-    known={norm_url(x.get("url","")) for x in DB.get("items",[])}
+    # Carry forward the previous edition when upgrading from the original tracker format.
+    if not DB.get("items") and os.path.exists(TRACKER):
+        try:
+            with open(TRACKER,encoding="utf-8") as old_file: old_data=json.load(old_file)
+            for story in old_data.get("stories",[]):
+                if story.get("url"):
+                    DB["items"].append({"id":slug(story.get("source","source")+" "+story.get("title","item")),"tier":"community","priority":False,"source":story.get("source",""),"author":"","published":story.get("date",""),"added":TODAY,"title":story.get("title",""),"url":story["url"],"summary":story.get("summary",""),"sowhat":story.get("why",""),"connection":story.get("watch",""),"themes":[]})
+        except Exception as ex:
+            print(f"Previous edition migration skipped: {ex}")
+    known={norm_url(x.get("url","")) for x in DB.get("items",[])} | {norm_url(u) for u in DB.get("seen_urls",[])}
     last_run=None
     if DB.get("runs"):
         try: last_run=datetime.fromisoformat(DB["runs"][-1]["completed_at"])
         except Exception: last_run=NOW-timedelta(days=3)
     candidates=collect(last_run,known)
+    DB.setdefault("seen_urls",[])
+    DB["seen_urls"].extend(x["url"] for x in candidates if x["url"] not in DB["seen_urls"])
     print(f"Checked {len(SOURCES)} source records; found {len(candidates)} unseen items.")
     recent=DB.get("items",[])
     # Still refresh the sense-making layer when a day has no new publications.
