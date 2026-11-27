@@ -873,9 +873,9 @@ def collect(last_run,known_urls):
     return found[:160]
 
 def editor(candidates,archive):
-    key=os.environ.get("OPENAI_API_KEY")
-    if not key: raise RuntimeError("Missing OPENAI_API_KEY secret")
-    model=os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"
+    key=os.environ.get("ANTHROPIC_API_KEY")
+    if not key: raise RuntimeError("Missing ANTHROPIC_API_KEY secret")
+    model=os.environ.get("ANTHROPIC_MODEL") or "claude-sonnet-5-5"
     prompt="""You are an exacting editor of an independent AI research tracker. The reader wants to understand how AI is built, evaluated, deployed and debated, with special attention to agents, context engineering, coding tools and AI in payments.
 Use only the supplied candidate records and archive. Never invent an event, claim, author, date or URL. Every URL must be copied exactly from a supplied record. Return valid JSON only:
 {
@@ -896,9 +896,16 @@ Editorial rules:
 - No date restriction. Use the current date only for the run metadata; preserve actual publication dates.
 """
     payload={"today":TODAY,"new_candidates":candidates,"recent_archive":archive[-80:],"existing_debates":DB.get("debates",[])}
-    r=requests.post("https://api.openai.com/v1/chat/completions",headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"},json={"model":model,"temperature":0.2,"response_format":{"type":"json_object"},"messages":[{"role":"system","content":prompt},{"role":"user","content":json.dumps(payload,ensure_ascii=False)}]},timeout=180)
-    if not r.ok: raise RuntimeError(f"OpenAI API error {r.status_code}: {r.text[:1200]}")
-    return json.loads(r.json()["choices"][0]["message"]["content"])
+    r=requests.post("https://api.anthropic.com/v1/messages",headers={"x-api-key":key,"anthropic-version":"2023-06-01","content-type":"application/json"},json={"model":model,"max_tokens":24000,"temperature":0.2,"system":prompt,"messages":[{"role":"user","content":json.dumps(payload,ensure_ascii=False)}]},timeout=240)
+    if not r.ok: raise RuntimeError(f"Anthropic API error {r.status_code}: {r.text[:1200]}")
+    blocks=[x.get("text","") for x in r.json().get("content",[]) if x.get("type")=="text"]
+    response_text="\\n".join(blocks).strip()
+    if response_text.startswith("```"):
+        response_text=re.sub(r"^\\`\\`\\`(?:json)?\\s*|\\s*\\`\\`\\`$","",response_text,flags=re.I)
+    try:
+        return json.loads(response_text)
+    except json.JSONDecodeError as ex:
+        raise RuntimeError(f"Claude returned invalid JSON: {ex}; response starts: {response_text[:500]}")
 
 def slug(s):
     s=re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")
