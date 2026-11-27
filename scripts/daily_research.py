@@ -190,6 +190,7 @@ def main():
         if d.get("synthesis"): existing["synthesis"]=d["synthesis"]
         if d.get("context"): existing["context"]=d["context"]
     big=result.get("bigger_picture",{})
+    big["headline"]="Bigger picture"
     DB["briefing"]={"current":{"date":TODAY,**big}}
     DB.setdefault("runs",[]).append({"date":TODAY,"started_at":NOW.isoformat(),"completed_at":datetime.now(timezone.utc).isoformat(),"candidates_found":len(candidates),"items_added":len(new_items)})
     DB["runs"]=DB["runs"][-500:]
