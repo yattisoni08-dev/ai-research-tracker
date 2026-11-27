@@ -39,7 +39,11 @@ jobs:
             git push
           fi
       - name: Trigger Netlify deploy hook (optional)
-        if: ${{ secrets.NETLIFY_BUILD_HOOK_URL != '' }}
         env:
           NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
-        run: curl --fail --silent --show-error -X POST "$NETLIFY_BUILD_HOOK_URL"
+        run: |
+          if [ -n "$NETLIFY_BUILD_HOOK_URL" ]; then
+            curl --fail --silent --show-error -X POST "$NETLIFY_BUILD_HOOK_URL"
+          else
+            echo "No Netlify build hook configured; skipping."
+          fi
