@@ -116,7 +116,7 @@ Use only the supplied candidate records and archive. Never invent an event, clai
 {
  "updates":[{"url":"exact candidate URL","what_happened":"2-4 plain sentences explaining the actual item","why_it_matters":"1-2 specific sentences","connection":"how it relates to another tracked development, debate or larger shift","themes":["one or more exact allowed theme labels"]}],
  "bigger_picture":{"headline":"specific editorial headline","summary":"4-7 sentence synthesis of what the new items collectively indicate, what changed, why it matters and what remains uncertain","themes":[{"title":"theme","analysis":"evidence-led explanation naming the relevant items or sources"}],"connections":[{"title":"connection or contradiction","explanation":"connect at least two concrete developments"}],"watchlist":["specific signal or question to monitor"]},
- "debates":[{"id":"short-kebab-id","question":"substantive AI debate","position":{"who":"source or named person","stance":"their evidenced position","url":"exact supporting URL"},"synthesis":"fair account of the competing positions and what evidence would resolve the question","context":"why the debate matters"}]
+ "debates":[{"id":"short-kebab-id","question":"substantive AI debate","positions":[{"who":"source or named person","stance":"their evidenced position","url":"exact supporting URL"}],"synthesis":"fair account of the competing positions and what evidence would resolve the question","context":"why the debate matters"}]
 }
 Editorial rules:
 - Include substantive developments only: research, launches, engineering, evaluations, agent architectures, context, memory, coding agents, prompting, model releases, adoption evidence, AI in payments/fraud/risk/agentic commerce. Skip ordinary product marketing, funding and non-AI payment news.
@@ -180,12 +180,13 @@ def main():
     for d in result.get("debates",[]):
         did=slug(d.get("id") or d.get("question","debate"))
         existing=next((x for x in DB["debates"] if x.get("id")==did),None)
-        pos=d.get("position") or {}
+        positions=d.get("positions") or ([d.get("position")] if d.get("position") else [])
         if existing is None:
             existing={"id":did,"title":d.get("question",""),"question":d.get("question",""),"positions":[],"synthesis":d.get("synthesis",""),"context":d.get("context","")}
             DB["debates"].append(existing)
-        if pos.get("url") and not any(p.get("url")==pos.get("url") for p in existing["positions"]):
-            existing["positions"].append({"who":pos.get("who","Source"),"date":TODAY,"stance":pos.get("stance",""),"url":pos["url"]})
+        for pos in positions:
+            if pos and pos.get("url") and not any(p.get("url")==pos.get("url") for p in existing["positions"]):
+                existing["positions"].append({"who":pos.get("who","Source"),"date":TODAY,"stance":pos.get("stance",""),"url":pos["url"]})
         if d.get("synthesis"): existing["synthesis"]=d["synthesis"]
         if d.get("context"): existing["context"]=d["context"]
     big=result.get("bigger_picture",{})
