@@ -116,7 +116,7 @@ Use only the supplied candidate records and archive. Never invent an event, clai
 {
  "updates":[{"url":"exact candidate URL","what_happened":"2-4 plain sentences explaining the actual item","why_it_matters":"1-2 specific sentences","connection":"how it relates to another tracked development, debate or larger shift","themes":["one or more exact allowed theme labels"]}],
  "bigger_picture":{"headline":"specific editorial headline","summary":"4-7 sentence synthesis of what the new items collectively indicate, what changed, why it matters and what remains uncertain","themes":[{"title":"theme","analysis":"evidence-led explanation naming the relevant items or sources"}],"connections":[{"title":"connection or contradiction","explanation":"connect at least two concrete developments"}],"watchlist":["specific signal or question to monitor"]},
- "debates":[{"id":"short-kebab-id","question":"substantive AI debate","positions":[{"who":"source or named person","stance":"their evidenced position","url":"exact supporting URL"}],"synthesis":"fair account of the competing positions and what evidence would resolve the question","context":"why the debate matters"}]
+ "debates":[{"id":"existing-or-new-kebab-id","question":"substantive AI debate","sides":[{"name":"position name","case":"strongest evidence-backed argument","reading":[{"title":"exact source title","source":"publisher or author","type":"paper, report or engineering case study","note":"what this source contributes","url":"exact supporting URL"}]}],"synthesis":"fair account of the competing positions and what evidence would resolve the question","context":"why the debate matters"}]
 }
 Editorial rules:
 - Include substantive developments only: research, launches, engineering, evaluations, agent architectures, context, memory, coding agents, prompting, model releases, adoption evidence, AI in payments/fraud/risk/agentic commerce. Skip ordinary product marketing, funding and non-AI payment news.
@@ -190,6 +190,16 @@ def main():
         for pos in positions:
             if pos and pos.get("url") and not any(p.get("url")==pos.get("url") for p in existing["positions"]):
                 existing["positions"].append({"who":pos.get("who","Source"),"date":TODAY,"stance":pos.get("stance",""),"url":pos["url"]})
+        for side in d.get("sides",[]):
+            if not side: continue
+            current_side=next((x for x in existing.setdefault("sides",[]) if x.get("name")==side.get("name")),None)
+            if current_side is None:
+                current_side={"name":side.get("name","Position"),"case":side.get("case",""),"reading":[]}
+                existing["sides"].append(current_side)
+            if side.get("case"): current_side["case"]=side["case"]
+            for reading in side.get("reading",[]):
+                if reading and reading.get("url") and not any(x.get("url")==reading.get("url") for x in current_side.setdefault("reading",[])):
+                    current_side["reading"].append({k:reading.get(k,"") for k in ("title","source","type","note","url")})
         if d.get("synthesis"): existing["synthesis"]=d["synthesis"]
         if d.get("context"): existing["context"]=d["context"]
     big=result.get("bigger_picture",{})
