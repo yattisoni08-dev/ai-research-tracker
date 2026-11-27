@@ -10,3 +10,6 @@
 
 /* Date-grouped unified research feed */
 .feed-day{padding:12px 0 28px}.feed-date{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0 8px;border-bottom:1px solid var(--line)}.feed-date h3{font:600 22px 'Playfair Display',serif;margin:0}.feed-date span{font:10px 'DM Mono',monospace;color:var(--muted)}.feed-day .update:first-of-type{border-top:0}
+
+/* Editorial storyline cards: one connected argument per full-width card. */
+.theme-grid:has(.storyline){grid-template-columns:1fr;gap:18px}.theme.storyline{border:1px solid var(--line);padding:22px 24px;border-radius:8px;background:#fff}.storyline h3{font-size:22px}.storyline p{max-width:850px}.storyline .story-watch{margin:14px 0;font-size:13px;color:var(--muted)}.storyline .story-watch strong{font:10px 'DM Mono',monospace;letter-spacing:.08em;color:var(--accent)}.story-entries{border-top:1px solid var(--line);margin-top:14px;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.story-entries a{display:block;padding:8px 0;border-bottom:1px solid var(--soft);font-size:13px;line-height:1.45;color:var(--ink);text-decoration:none}.story-entries a:hover{text-decoration:underline;text-underline-offset:3px}@media(max-width:700px){.theme.storyline{padding:18px}.story-entries{grid-template-columns:1fr}}
