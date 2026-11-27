@@ -1,5 +1,5 @@
 import json, os, re, sys, hashlib
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone\nfrom zoneinfo import ZoneInfo
 from email.utils import parsedate_to_datetime
 from urllib.parse import urlsplit, urlunsplit
 import feedparser, requests
@@ -73,7 +73,7 @@ def collect():
 def call_editor(items):
     api_key=os.environ.get("OPENAI_API_KEY")
     if not api_key: raise RuntimeError("Missing OPENAI_API_KEY secret")
-    model=os.environ.get("OPENAI_MODEL","gpt-4o-mini")
+    model=os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"\n    local_today=datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %B %Y")
     prompt={
       "role":"You are the research editor of an independent daily briefing for a technically curious reader working around AI, agents, developer tools and fintech. Focus on original research, product releases, engineering blogs and primary sources. Include Razorpay, Stripe, global payments and fintech when there is a real signal.",
       "rules":[
@@ -84,7 +84,7 @@ def call_editor(items):
         "Avoid generic AI hype and routine funding/marketing announcements unless strategically meaningful.",
         "Return valid JSON only with keys edition, status, thesis, intro, signals, stories, debates, watchlist.",
         "signals: exactly 3 objects with number,title,text. stories: objects with category,tag,title,summary,why,watch,source,url,date. debates: 2 or 3 objects with question,position,tension,signals. watchlist: 4 to 6 strings.",
-        "edition must be the current date in Asia/Kolkata format e.g. 27 November 2026. status should say Daily research edition.",
+        f"Today is {local_today} in Asia/Kolkata. Use this exact date for edition (format: DD Month YYYY). status should say Daily research edition.",
         "Story date should be the current date in format DD Mon YYYY. Categories should be concise such as Agents, Research, Developer tools, Fintech, Industry."
       ],
       "candidate_sources":items
