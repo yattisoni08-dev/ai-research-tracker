@@ -298,7 +298,7 @@ SOURCES=[
   "segment": "Global payment companies"
  },
  {
-  "name": "PayPal / Braintree",
+  "name": "PayPal",
   "tier": "fintech",
   "watch": "AI fraud, risk, checkout and agentic commerce",
   "links": [
@@ -314,7 +314,7 @@ SOURCES=[
   "segment": "Global payment companies"
  },
  {
-  "name": "Block",
+  "name": "Block (Square)",
   "tier": "fintech",
   "watch": "AI in payments, risk and engineering",
   "links": [
