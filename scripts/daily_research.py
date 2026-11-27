@@ -74,7 +74,8 @@ def collect():
 def call_editor(items):
     api_key=os.environ.get("OPENAI_API_KEY")
     if not api_key: raise RuntimeError("Missing OPENAI_API_KEY secret")
-    model=os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"\n    local_today=datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %B %Y")
+    model=os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"
+    local_today=datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %B %Y")
     prompt={
       "role":"You are the research editor of an independent daily briefing for a technically curious reader working around AI, agents, developer tools and fintech. Focus on original research, product releases, engineering blogs and primary sources. Include Razorpay, Stripe, global payments and fintech when there is a real signal.",
       "rules":[
