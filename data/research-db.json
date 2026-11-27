@@ -682,7 +682,211 @@
     "https://vercel.com/changelog/all-sandbox-runtimes-now-use-vercel-managed-images",
     "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/"
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "single-agent-vs-multi-agent",
+      "title": "Single agent vs multi-agent systems",
+      "question": "When does coordinating multiple agents produce better results than giving one strong agent the tools, context and time to solve the task?",
+      "context": "This is an architectural choice with direct consequences for accuracy, latency, cost, reliability and debugging. The key variables are task decomposability, independence of subtasks, model capability, communication quality and the evaluation budget. The evidence does not support a universal winner.",
+      "synthesis": "The strongest case for multi-agent systems is parallelism, specialization and independent verification on tasks that can be split into genuinely separable workstreams. The strongest case for a single agent is coherent shared context, fewer hand-offs, lower latency and easier control. Recent controlled comparisons suggest multi-agent gains are conditional and can shrink or reverse with stronger models or lossy coordination. Choose by task structure and measured end-to-end outcomes, not agent count.",
+      "sides": [
+        {
+          "name": "The case for multi-agent systems",
+          "case": "Multiple agents can explore independent directions in parallel, specialize by role, cross-check one another and cover more ground on long-horizon research or coding tasks. This is most persuasive when subtasks are separable and communication can preserve the important findings.",
+          "reading": [
+            {
+              "title": "When do AI agents benefit from collaboration?",
+              "source": "MIT Media Lab",
+              "type": "Controlled research",
+              "note": "Compares single-agent, independent, centralized, decentralized and hybrid architectures while holding prompts, tools and compute ceilings constant.",
+              "url": "https://www.media.mit.edu/projects/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/overview/"
+            },
+            {
+              "title": "Large Language Model Based Multi-agents: A Survey of Progress and Challenges",
+              "source": "IJCAI 2024",
+              "type": "Research survey",
+              "note": "A foundational map of agent roles, communication, cooperation, debate and competitive architectures.",
+              "url": "https://ijcai.org/proceedings/2024/890"
+            },
+            {
+              "title": "How we built our multi-agent research system",
+              "source": "Anthropic Engineering",
+              "type": "Engineering case study",
+              "note": "A practical account of using an orchestrator and parallel subagents for broad research tasks; read the reported gains alongside its task-specific setup.",
+              "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+            }
+          ]
+        },
+        {
+          "name": "The case for a strong single agent",
+          "case": "A single agent keeps the full reasoning history in one place, avoids coordination and message-passing overhead, and is simpler to evaluate, debug and operate. For tightly coupled sequential tasks, extra agents can duplicate work, lose context or amplify errors.",
+          "reading": [
+            {
+              "title": "Building effective agents",
+              "source": "Anthropic Engineering",
+              "type": "Engineering guidance",
+              "note": "Argues for simple, composable patterns and explains when workflows or a single agent are sufficient before adding complexity.",
+              "url": "https://www.anthropic.com/engineering/building-effective-agents"
+            },
+            {
+              "title": "Single-agent or Multi-agent Systems? Why Not Both?",
+              "source": "Research paper, 2025",
+              "type": "Comparative study",
+              "note": "Reports that multi-agent advantages diminish as model capabilities improve and explores a hybrid cascade between single- and multi-agent approaches.",
+              "url": "https://arxiv.org/abs/2505.18286"
+            },
+            {
+              "title": "Capable language models can outgrow the benefits of collaboration",
+              "source": "Nature Machine Intelligence, 2026",
+              "type": "Controlled research",
+              "note": "A controlled comparison of coordination structures, model capability and compute budgets; useful for understanding when coordination helps or adds overhead.",
+              "url": "https://www.nature.com/articles/s42256-026-01268-y"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflows-vs-autonomous-agents",
+      "title": "Deterministic workflows vs autonomous agents",
+      "question": "Should AI systems follow predefined workflows, or should models dynamically decide their own next steps?",
+      "context": "The distinction affects predictability, control, flexibility, failure recovery and the amount of autonomy granted to a model. Many production systems combine both patterns rather than choosing one exclusively.",
+      "synthesis": "Predefined workflows are easier to test, constrain and debug when the task is known. Autonomous agents are useful when the path cannot be specified in advance and decisions must adapt to tool feedback or changing environments. The practical question is whether the task's uncertainty justifies giving the model control over the process. Hybrid designs can keep high-risk steps deterministic while allowing bounded autonomy elsewhere.",
+      "sides": [
+        {
+          "name": "The case for workflows",
+          "case": "Known tasks benefit from explicit control flow, bounded choices and predictable execution. Deterministic orchestration reduces the number of ways a model can wander, fail or incur unexpected cost.",
+          "reading": [
+            {
+              "title": "Building effective agents",
+              "source": "Anthropic Engineering",
+              "type": "Engineering guidance",
+              "note": "Defines workflows as LLMs and tools arranged through predefined code paths, and recommends starting with the simplest sufficient architecture.",
+              "url": "https://www.anthropic.com/engineering/building-effective-agents"
+            }
+          ]
+        },
+        {
+          "name": "The case for autonomous agents",
+          "case": "Open-ended tasks require the system to choose tools, sequence actions and adapt based on what it discovers. Fixed workflows can become brittle when the right path is not known beforehand.",
+          "reading": [
+            {
+              "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+              "source": "Research paper, 2022",
+              "type": "Foundational paper",
+              "note": "Introduces an interleaved reasoning-and-action paradigm in which models use observations from actions to guide subsequent steps.",
+              "url": "https://arxiv.org/abs/2210.03629"
+            },
+            {
+              "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+              "source": "Research paper, 2023",
+              "type": "Foundational paper",
+              "note": "Explores how language models can learn when and how to call external tools.",
+              "url": "https://arxiv.org/abs/2302.04761"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rag-vs-long-context",
+      "title": "Retrieval-augmented generation vs long context",
+      "question": "Should an AI system retrieve only relevant information, or place a much larger body of material directly into the model's context window?",
+      "context": "This choice shapes answer quality, freshness, traceability, latency and inference cost. Results vary by task, retrieval quality, context length and model capability; the two approaches can also be combined.",
+      "synthesis": "Long context can perform strongly when the model can attend to a supplied corpus and the budget allows it. RAG can reduce input volume, support frequently changing knowledge and make evidence selection explicit, but retrieval misses and poor chunking can undermine answers. The useful comparison is not RAG versus an unlimited context window in the abstract: it is end-to-end quality, cost and reliability for the actual workload. Hybrid routing is a credible middle ground.",
+      "sides": [
+        {
+          "name": "The case for long context",
+          "case": "Giving the model the source material directly can avoid retrieval misses and preserve surrounding context, especially when the relevant evidence is spread across a known corpus and sufficient context budget is available.",
+          "reading": [
+            {
+              "title": "Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach",
+              "source": "EMNLP 2024 Industry Track",
+              "type": "Comparative study",
+              "note": "Finds that long-context models can outperform RAG when sufficiently resourced, while RAG retains a cost advantage; proposes routing between them.",
+              "url": "https://aclanthology.org/2024.emnlp-industry.66/"
+            },
+            {
+              "title": "Long Context vs. RAG for LLMs: An Evaluation and Revisits",
+              "source": "Research paper, 2025",
+              "type": "Comparative study",
+              "note": "Finds long context performs better on some Wikipedia-style QA tasks, while RAG has advantages on dialogue and general queries.",
+              "url": "https://arxiv.org/abs/2501.01880"
+            }
+          ]
+        },
+        {
+          "name": "The case for retrieval",
+          "case": "Retrieval selects a smaller, relevant evidence set, can keep knowledge current without rebuilding a prompt corpus, and often reduces the cost of repeatedly sending large contexts. It also supports source-level grounding when implemented well.",
+          "reading": [
+            {
+              "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+              "source": "NeurIPS 2020",
+              "type": "Foundational paper",
+              "note": "The original RAG paper combines parametric generation with a non-parametric retrieved knowledge store.",
+              "url": "https://arxiv.org/abs/2005.11401"
+            },
+            {
+              "title": "Lost in the Middle: How Language Models Use Long Contexts",
+              "source": "TACL 2024",
+              "type": "Research paper",
+              "note": "Shows that models can use relevant information less reliably when it appears in the middle of long inputs, challenging the assumption that a larger context window solves retrieval.",
+              "url": "https://arxiv.org/abs/2307.03172"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open-weights-vs-closed-models",
+      "title": "Open-weight vs closed AI models",
+      "question": "Should powerful model weights be widely released, or should access remain controlled by model providers?",
+      "context": "This debate combines innovation, transparency, customization, competition, security and accountability. 'Open source' is often used imprecisely: model weights, training data, code, licences and deployment access are different dimensions of openness.",
+      "synthesis": "Open weights can enable independent inspection, local deployment, customization and broader participation, but releasing weights makes downstream use harder to monitor or revoke. Closed systems can retain provider-side safeguards and operational control, while concentrating access and limiting independent scrutiny. The right analysis is model- and capability-specific, and should distinguish open weights from fully open training data and processes.",
+      "sides": [
+        {
+          "name": "The case for open weights",
+          "case": "Broad access can lower barriers to research and deployment, enable customization and local control, and let outside researchers inspect and improve models. It can also reduce dependence on a small number of providers.",
+          "reading": [
+            {
+              "title": "On the Societal Impact of Open Foundation Models",
+              "source": "Stanford CRFM / ICML 2024",
+              "type": "Research report",
+              "note": "Assesses benefits and risks of widely available model weights, including customization, inspection and downstream misuse.",
+              "url": "https://crfm.stanford.edu/open-fms/"
+            },
+            {
+              "title": "Open vs. closed AI: How behind are open models?",
+              "source": "Epoch AI",
+              "type": "Evidence review",
+              "note": "Tracks model-weight availability and capability gaps over time, helping ground claims about open-model competitiveness.",
+              "url": "https://epoch.ai/publications/open-models-report"
+            }
+          ]
+        },
+        {
+          "name": "The case for controlled release",
+          "case": "Once powerful weights are distributed, developers cannot reliably monitor downstream use, apply updates or revoke access. Some capabilities may create security risks that are harder to contain after release.",
+          "reading": [
+            {
+              "title": "Why 'open' AI systems are actually closed, and why this matters",
+              "source": "Nature, 2024",
+              "type": "Policy perspective",
+              "note": "Challenges loose definitions of openness and argues that open weights alone do not resolve concentration of power across data, labour, compute and infrastructure.",
+              "url": "https://www.nature.com/articles/s41586-024-08141-1"
+            },
+            {
+              "title": "Open vs. closed AI: How behind are open models?",
+              "source": "Epoch AI",
+              "type": "Evidence review",
+              "note": "Documents the trade-offs around model release, including the irreversibility of weight publication and the difficulty of controlling downstream use.",
+              "url": "https://epoch.ai/publications/open-models-report"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "runs": [
     {
       "date": "2026-11-27",
