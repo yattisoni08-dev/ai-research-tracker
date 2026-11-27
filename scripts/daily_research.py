@@ -1,5 +1,6 @@
 import json, os, re, sys, hashlib
-from datetime import datetime, timedelta, timezone\nfrom zoneinfo import ZoneInfo
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from email.utils import parsedate_to_datetime
 from urllib.parse import urlsplit, urlunsplit
 import feedparser, requests
