@@ -2,7 +2,7 @@
   "sources": [
     {
       "name": "Razorpay Engineering",
-      "tier": "razorpay",
+      "tier": "fintech",
       "watch": "Agents, LLMs, ML systems, developer infrastructure",
       "links": [
         {
@@ -13,11 +13,12 @@
       "searches": [
         "site:engineering.razorpay.com AI OR agent OR LLM OR machine learning",
         "Razorpay AI agents engineering blog"
-      ]
+      ],
+      "segment": "India"
     },
     {
       "name": "Razorpay",
-      "tier": "razorpay",
+      "tier": "fintech",
       "watch": "AI products, fraud, risk, payments and agentic commerce",
       "links": [
         {
@@ -28,7 +29,8 @@
       "feed": "https://razorpay.com/blog/feed/",
       "searches": [
         "site:razorpay.com/blog AI OR agent OR LLM OR machine learning"
-      ]
+      ],
+      "segment": "India"
     },
     {
       "name": "Anthropic",
@@ -234,7 +236,7 @@
     },
     {
       "name": "Stripe",
-      "tier": "stripe",
+      "tier": "fintech",
       "watch": "AI, agentic commerce, payments and engineering",
       "links": [
         {
@@ -245,11 +247,12 @@
       "feed": "https://stripe.com/blog/feed.rss",
       "searches": [
         "site:stripe.com/blog AI agents machine learning agentic commerce"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Adyen",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI fraud, risk, authorisation and payment intelligence",
       "links": [
         {
@@ -260,11 +263,12 @@
       "searches": [
         "Adyen AI fraud machine learning payments",
         "Adyen agentic commerce AI"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Checkout.com",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI fraud, risk and payment intelligence",
       "links": [
         {
@@ -274,11 +278,12 @@
       ],
       "searches": [
         "Checkout.com AI fraud machine learning agents"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "PayPal / Braintree",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI fraud, risk, checkout and agentic commerce",
       "links": [
         {
@@ -289,11 +294,12 @@
       "searches": [
         "PayPal AI fraud machine learning agentic commerce",
         "Braintree AI payments machine learning"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Block",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI in payments, risk and engineering",
       "links": [
         {
@@ -303,11 +309,12 @@
       ],
       "searches": [
         "Block Square engineering AI machine learning payments"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Worldpay",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI fraud, authorisation and payment operations",
       "links": [
         {
@@ -317,11 +324,12 @@
       ],
       "searches": [
         "Worldpay AI fraud machine learning payments"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Airwallex",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI in financial operations and payments",
       "links": [
         {
@@ -331,11 +339,12 @@
       ],
       "searches": [
         "Airwallex AI agents machine learning payments"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "dLocal",
-      "tier": "payments",
+      "tier": "fintech",
       "watch": "AI fraud, risk and payment optimisation",
       "links": [
         {
@@ -345,7 +354,8 @@
       ],
       "searches": [
         "dLocal AI fraud machine learning payments"
-      ]
+      ],
+      "segment": "Global payment companies"
     },
     {
       "name": "Harrison Chase",
@@ -522,6 +532,276 @@
         }
       ],
       "feed": "https://www.interconnects.ai/feed"
+    },
+    {
+      "name": "Paytm",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, machine learning, fraud detection, payments and merchant technology",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://paytm.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:paytm.com/blog AI OR machine learning OR fraud OR payments"
+      ]
+    },
+    {
+      "name": "PhonePe",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, machine learning, fraud prevention, UPI and payment infrastructure",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.phonepe.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:phonepe.com/blog AI OR machine learning OR fraud OR payments"
+      ]
+    },
+    {
+      "name": "Cashfree Payments",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, fraud and risk, payment orchestration, identity and developer infrastructure",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.cashfree.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:cashfree.com/blog AI OR machine learning OR fraud OR payments"
+      ]
+    },
+    {
+      "name": "Juspay",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "Payment infrastructure, orchestration, ML, intelligent routing and engineering",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://juspay.io/blog"
+        }
+      ],
+      "searches": [
+        "site:juspay.io/blog AI OR machine learning OR payments OR engineering"
+      ]
+    },
+    {
+      "name": "Pine Labs",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, merchant technology, payment infrastructure and agentic commerce",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.pinelabs.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:pinelabs.com/blog AI OR machine learning OR payments"
+      ]
+    },
+    {
+      "name": "PayU India",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, fraud, risk, payment technology and checkout",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.payu.in/blog"
+        }
+      ],
+      "searches": [
+        "site:payu.in/blog AI OR machine learning OR fraud"
+      ]
+    },
+    {
+      "name": "CRED",
+      "tier": "fintech",
+      "segment": "India",
+      "watch": "AI, credit, risk, payments and product engineering",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://cred.club/blog"
+        }
+      ],
+      "searches": [
+        "site:cred.club/blog AI OR machine learning OR payments"
+      ]
+    },
+    {
+      "name": "Mastercard",
+      "tier": "fintech",
+      "segment": "Global payment companies",
+      "watch": "AI, decision intelligence, fraud, cybersecurity and payment networks",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.mastercard.com/news/"
+        }
+      ],
+      "searches": [
+        "site:mastercard.com/news AI OR generative AI OR fraud OR machine learning"
+      ]
+    },
+    {
+      "name": "Visa",
+      "tier": "fintech",
+      "segment": "Global payment companies",
+      "watch": "AI, intelligent commerce, fraud, risk and payment networks",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://usa.visa.com/about-visa/newsroom.html"
+        }
+      ],
+      "searches": [
+        "site:visa.com AI agentic commerce fraud machine learning"
+      ]
+    },
+    {
+      "name": "Fiserv",
+      "tier": "fintech",
+      "segment": "Global payment companies",
+      "watch": "AI, fraud, risk, payments and financial technology infrastructure",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.fiserv.com/en/insights.html"
+        }
+      ],
+      "searches": [
+        "site:fiserv.com AI fraud machine learning payments"
+      ]
+    },
+    {
+      "name": "Sardine",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "AI-native fraud, identity, risk decisioning and financial crime",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.sardine.ai/blog"
+        }
+      ],
+      "searches": [
+        "site:sardine.ai/blog AI fraud risk"
+      ]
+    },
+    {
+      "name": "Feedzai",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "AI, machine learning, fraud prevention and financial crime",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.feedzai.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:feedzai.com/blog AI machine learning fraud"
+      ]
+    },
+    {
+      "name": "Sift",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "ML-powered fraud prevention, trust, safety and risk operations",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://sift.com/blog"
+        }
+      ],
+      "searches": [
+        "site:sift.com/blog AI machine learning fraud"
+      ]
+    },
+    {
+      "name": "Featurespace",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "Adaptive behavioural analytics, AI fraud detection and financial crime",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.featurespace.com/newsroom/"
+        }
+      ],
+      "searches": [
+        "site:featurespace.com AI fraud machine learning"
+      ]
+    },
+    {
+      "name": "Riskified",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "AI commerce protection, fraud prevention and chargeback intelligence",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.riskified.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:riskified.com/blog AI machine learning fraud"
+      ]
+    },
+    {
+      "name": "Forter",
+      "tier": "fintech",
+      "segment": "AI-led fraud and risk intelligence",
+      "watch": "AI identity intelligence, fraud prevention and commerce trust",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.forter.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:forter.com/blog AI machine learning fraud"
+      ]
+    },
+    {
+      "name": "Plaid",
+      "tier": "fintech",
+      "segment": "Fintech infrastructure",
+      "watch": "AI, financial data infrastructure, identity, risk and developer tools",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://plaid.com/blog/"
+        }
+      ],
+      "searches": [
+        "site:plaid.com/blog AI machine learning fraud"
+      ]
+    },
+    {
+      "name": "Marqeta",
+      "tier": "fintech",
+      "segment": "Fintech infrastructure",
+      "watch": "AI, card issuing, payment infrastructure, risk and developer technology",
+      "links": [
+        {
+          "label": "Blog / newsroom",
+          "url": "https://www.marqeta.com/blog"
+        }
+      ],
+      "searches": [
+        "site:marqeta.com/blog AI machine learning payments"
+      ]
     }
   ],
   "items": [
