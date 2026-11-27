@@ -16,44 +16,809 @@ THEMES=["Agents & orchestration","Context engineering","Memory","Evals & safety"
 
 # The source registry is persistent data, not a one-off search prompt.
 SOURCES=[
- {"name":"Razorpay Engineering","tier":"razorpay","watch":"Agents, LLMs, ML systems, developer infrastructure","links":[{"label":"Engineering site","url":"https://engineering.razorpay.com/"}],"searches":["site:engineering.razorpay.com AI OR agent OR LLM OR machine learning","Razorpay AI agents engineering blog"]},
- {"name":"Razorpay","tier":"razorpay","watch":"AI products, fraud, risk, payments and agentic commerce","links":[{"label":"Blog","url":"https://razorpay.com/blog/"}],"feed":"https://razorpay.com/blog/feed/","searches":["site:razorpay.com/blog AI OR agent OR LLM OR machine learning"]},
- {"name":"Anthropic","tier":"lab","watch":"Engineering, research, alignment and agents","links":[{"label":"News","url":"https://www.anthropic.com/news"},{"label":"Engineering","url":"https://www.anthropic.com/engineering"}],"feed":"https://www.anthropic.com/rss.xml"},
- {"name":"OpenAI","tier":"lab","watch":"Research, product and engineering","links":[{"label":"News","url":"https://openai.com/news/"}],"feed":"https://openai.com/news/rss.xml"},
- {"name":"Google DeepMind","tier":"lab","watch":"Gemini, research and agents","links":[{"label":"Blog","url":"https://deepmind.google/discover/blog/"}],"feed":"https://deepmind.google/blog/rss.xml"},
- {"name":"Meta AI","tier":"lab","watch":"Open models, research and infrastructure","links":[{"label":"Research","url":"https://ai.meta.com/blog/"}],"searches":["site:ai.meta.com/blog AI research model agents"]},
- {"name":"Mistral AI","tier":"lab","watch":"Models, releases and research","links":[{"label":"News","url":"https://mistral.ai/news/"}],"searches":["Mistral AI news models research agents"]},
- {"name":"xAI","tier":"lab","watch":"Grok models, research and agent capabilities","links":[{"label":"News","url":"https://x.ai/news"}],"searches":["xAI Grok research models agents news"]},
- {"name":"Hugging Face","tier":"lab","watch":"Models, datasets, papers and open-source tools","links":[{"label":"Blog","url":"https://huggingface.co/blog"}],"feed":"https://huggingface.co/blog/feed.xml"},
- {"name":"Microsoft Research","tier":"lab","watch":"Research papers, agents and evaluation","links":[{"label":"Research","url":"https://www.microsoft.com/en-us/research/blog/"}],"searches":["site:microsoft.com/en-us/research/blog AI agents LLM"]},
- {"name":"Cognition","tier":"builder","watch":"Coding agents, agent architecture and context","links":[{"label":"Blog","url":"https://www.cognition.ai/blog"}],"searches":["Cognition AI blog coding agent architecture"]},
- {"name":"LangChain","tier":"builder","watch":"Agents, orchestration, context engineering and evals","links":[{"label":"Blog","url":"https://blog.langchain.com/"}],"feed":"https://blog.langchain.com/rss/"},
- {"name":"LlamaIndex","tier":"builder","watch":"Agents, retrieval, data and evaluation","links":[{"label":"Blog","url":"https://www.llamaindex.ai/blog"}],"searches":["LlamaIndex blog agents memory evals"]},
- {"name":"Cursor","tier":"builder","watch":"Coding agents and developer workflows","links":[{"label":"Blog","url":"https://www.cursor.com/blog"}],"searches":["Cursor AI blog coding agents"]},
- {"name":"Vercel","tier":"builder","watch":"AI SDK, agentic apps and developer tooling","links":[{"label":"Blog","url":"https://vercel.com/blog"}],"feed":"https://vercel.com/atom"},
- {"name":"Replit","tier":"builder","watch":"Coding agents and software creation","links":[{"label":"Blog","url":"https://blog.replit.com/"}],"searches":["Replit blog AI agent coding"]},
- {"name":"Modal","tier":"builder","watch":"AI infrastructure and model serving","links":[{"label":"Blog","url":"https://modal.com/blog"}],"searches":["Modal blog AI infrastructure agents"]},
- {"name":"Stripe","tier":"stripe","watch":"AI, agentic commerce, payments and engineering","links":[{"label":"Blog","url":"https://stripe.com/blog"}],"feed":"https://stripe.com/blog/feed.rss","searches":["site:stripe.com/blog AI agents machine learning agentic commerce"]},
- {"name":"Adyen","tier":"payments","watch":"AI fraud, risk, authorisation and payment intelligence","links":[{"label":"News","url":"https://www.adyen.com/knowledge-hub"}],"searches":["Adyen AI fraud machine learning payments","Adyen agentic commerce AI"]},
- {"name":"Checkout.com","tier":"payments","watch":"AI fraud, risk and payment intelligence","links":[{"label":"Insights","url":"https://www.checkout.com/blog"}],"searches":["Checkout.com AI fraud machine learning agents"]},
- {"name":"PayPal / Braintree","tier":"payments","watch":"AI fraud, risk, checkout and agentic commerce","links":[{"label":"Newsroom","url":"https://newsroom.paypal-corp.com/"}],"searches":["PayPal AI fraud machine learning agentic commerce","Braintree AI payments machine learning"]},
- {"name":"Block","tier":"payments","watch":"AI in payments, risk and engineering","links":[{"label":"Engineering","url":"https://developer.squareup.com/blog"}],"searches":["Block Square engineering AI machine learning payments"]},
- {"name":"Worldpay","tier":"payments","watch":"AI fraud, authorisation and payment operations","links":[{"label":"Insights","url":"https://www.worldpay.com/insights"}],"searches":["Worldpay AI fraud machine learning payments"]},
- {"name":"Airwallex","tier":"payments","watch":"AI in financial operations and payments","links":[{"label":"Blog","url":"https://www.airwallex.com/blog"}],"searches":["Airwallex AI agents machine learning payments"]},
- {"name":"dLocal","tier":"payments","watch":"AI fraud, risk and payment optimisation","links":[{"label":"Blog","url":"https://www.dlocal.com/blog/"}],"searches":["dLocal AI fraud machine learning payments"]},
- {"name":"Harrison Chase","tier":"person","watch":"In the Loop essays, talks and agent architecture","links":[{"label":"In the Loop","url":"https://blog.langchain.com/tag/in-the-loop/"}],"searches":["Harrison Chase In the Loop LangChain agents","Harrison Chase podcast AI agents"]},
- {"name":"Walden Yan","tier":"person","watch":"Cognition essays, agent architecture and context","links":[{"label":"Cognition","url":"https://www.cognition.ai/blog"}],"searches":["Walden Yan Cognition agent architecture context"]},
- {"name":"Simon Willison","tier":"person","watch":"Practical AI, LLM tooling and experiments","links":[{"label":"Blog","url":"https://simonwillison.net/"}],"feed":"https://simonwillison.net/atom/everything/"},
- {"name":"swyx / Latent Space","tier":"person","watch":"AI engineering, agents and practitioner interviews","links":[{"label":"Latent Space","url":"https://www.latent.space/"}],"searches":["Latent Space AI engineering agents recent"]},
- {"name":"Ethan Mollick","tier":"person","watch":"AI adoption, work and practical experiments","links":[{"label":"One Useful Thing","url":"https://www.oneusefulthing.org/"}],"feed":"https://www.oneusefulthing.org/feed"},
- {"name":"Andrej Karpathy","tier":"person","watch":"Model architecture, coding and AI learning","links":[{"label":"GitHub","url":"https://github.com/karpathy"}],"searches":["Andrej Karpathy AI blog YouTube GitHub recent"]},
- {"name":"Patrick McKenzie","tier":"person","watch":"AI, software businesses and financial infrastructure","links":[{"label":"Bits about Money","url":"https://www.bitsaboutmoney.com/"}],"searches":["Patrick McKenzie AI software engineering recent","Patrick McKenzie Complex Systems podcast AI"]},
- {"name":"Riley Goodside","tier":"person","watch":"Prompting, model behaviour and evaluations","links":[{"label":"X profile","url":"https://x.com/goodside"}],"searches":["Riley Goodside prompt engineering AI recent"]},
- {"name":"Deedy Das","tier":"person","watch":"AI engineering, startups and industry analysis","links":[{"label":"X profile","url":"https://x.com/deedydas"}],"searches":["Deedy Das AI agents engineering recent"]},
- {"name":"Hugging Face Daily Papers","tier":"community","watch":"Only notable agent, memory and evaluation papers","links":[{"label":"Daily Papers","url":"https://huggingface.co/papers"}],"searches":["site:huggingface.co/papers agents memory evaluation"]},
- {"name":"arXiv","tier":"community","watch":"Trending papers on agents, memory, reasoning and evaluation","links":[{"label":"AI papers","url":"https://arxiv.org/list/cs.AI/recent"}],"feed":"https://export.arxiv.org/api/query?search_query=all:%28agent%20OR%20LLM%20OR%20tool-use%20OR%20reasoning%20OR%20memory%29&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending"},
- {"name":"Hacker News","tier":"community","watch":"Front-page AI engineering and research discussions","links":[{"label":"Front page","url":"https://news.ycombinator.com/"}],"searches":["Hacker News AI agents LLM research discussion"]},
- {"name":"Interconnects","tier":"community","watch":"Model development, post-training and AI research analysis","links":[{"label":"Blog","url":"https://www.interconnects.ai/"}],"feed":"https://www.interconnects.ai/feed"}
+ {
+  "name": "Razorpay Engineering",
+  "tier": "fintech",
+  "watch": "Agents, LLMs, ML systems, developer infrastructure",
+  "links": [
+   {
+    "label": "Engineering site",
+    "url": "https://engineering.razorpay.com/"
+   }
+  ],
+  "searches": [
+   "site:engineering.razorpay.com AI OR agent OR LLM OR machine learning",
+   "Razorpay AI agents engineering blog"
+  ],
+  "segment": "India"
+ },
+ {
+  "name": "Razorpay",
+  "tier": "fintech",
+  "watch": "AI products, fraud, risk, payments and agentic commerce",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://razorpay.com/blog/"
+   }
+  ],
+  "feed": "https://razorpay.com/blog/feed/",
+  "searches": [
+   "site:razorpay.com/blog AI OR agent OR LLM OR machine learning"
+  ],
+  "segment": "India"
+ },
+ {
+  "name": "Anthropic",
+  "tier": "lab",
+  "watch": "Engineering, research, alignment and agents",
+  "links": [
+   {
+    "label": "News",
+    "url": "https://www.anthropic.com/news"
+   },
+   {
+    "label": "Engineering",
+    "url": "https://www.anthropic.com/engineering"
+   }
+  ],
+  "feed": "https://www.anthropic.com/rss.xml"
+ },
+ {
+  "name": "OpenAI",
+  "tier": "lab",
+  "watch": "Research, product and engineering",
+  "links": [
+   {
+    "label": "News",
+    "url": "https://openai.com/news/"
+   }
+  ],
+  "feed": "https://openai.com/news/rss.xml"
+ },
+ {
+  "name": "Google DeepMind",
+  "tier": "lab",
+  "watch": "Gemini, research and agents",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://deepmind.google/discover/blog/"
+   }
+  ],
+  "feed": "https://deepmind.google/blog/rss.xml"
+ },
+ {
+  "name": "Meta AI",
+  "tier": "lab",
+  "watch": "Open models, research and infrastructure",
+  "links": [
+   {
+    "label": "Research",
+    "url": "https://ai.meta.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:ai.meta.com/blog AI research model agents"
+  ]
+ },
+ {
+  "name": "Mistral AI",
+  "tier": "lab",
+  "watch": "Models, releases and research",
+  "links": [
+   {
+    "label": "News",
+    "url": "https://mistral.ai/news/"
+   }
+  ],
+  "searches": [
+   "Mistral AI news models research agents"
+  ]
+ },
+ {
+  "name": "xAI",
+  "tier": "lab",
+  "watch": "Grok models, research and agent capabilities",
+  "links": [
+   {
+    "label": "News",
+    "url": "https://x.ai/news"
+   }
+  ],
+  "searches": [
+   "xAI Grok research models agents news"
+  ]
+ },
+ {
+  "name": "Hugging Face",
+  "tier": "lab",
+  "watch": "Models, datasets, papers and open-source tools",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://huggingface.co/blog"
+   }
+  ],
+  "feed": "https://huggingface.co/blog/feed.xml"
+ },
+ {
+  "name": "Microsoft Research",
+  "tier": "lab",
+  "watch": "Research papers, agents and evaluation",
+  "links": [
+   {
+    "label": "Research",
+    "url": "https://www.microsoft.com/en-us/research/blog/"
+   }
+  ],
+  "searches": [
+   "site:microsoft.com/en-us/research/blog AI agents LLM"
+  ]
+ },
+ {
+  "name": "Cognition",
+  "tier": "builder",
+  "watch": "Coding agents, agent architecture and context",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.cognition.ai/blog"
+   }
+  ],
+  "searches": [
+   "Cognition AI blog coding agent architecture"
+  ]
+ },
+ {
+  "name": "LangChain",
+  "tier": "builder",
+  "watch": "Agents, orchestration, context engineering and evals",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://blog.langchain.com/"
+   }
+  ],
+  "feed": "https://blog.langchain.com/rss/"
+ },
+ {
+  "name": "LlamaIndex",
+  "tier": "builder",
+  "watch": "Agents, retrieval, data and evaluation",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.llamaindex.ai/blog"
+   }
+  ],
+  "searches": [
+   "LlamaIndex blog agents memory evals"
+  ]
+ },
+ {
+  "name": "Cursor",
+  "tier": "builder",
+  "watch": "Coding agents and developer workflows",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.cursor.com/blog"
+   }
+  ],
+  "searches": [
+   "Cursor AI blog coding agents"
+  ]
+ },
+ {
+  "name": "Vercel",
+  "tier": "builder",
+  "watch": "AI SDK, agentic apps and developer tooling",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://vercel.com/blog"
+   }
+  ],
+  "feed": "https://vercel.com/atom"
+ },
+ {
+  "name": "Replit",
+  "tier": "builder",
+  "watch": "Coding agents and software creation",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://blog.replit.com/"
+   }
+  ],
+  "searches": [
+   "Replit blog AI agent coding"
+  ]
+ },
+ {
+  "name": "Modal",
+  "tier": "builder",
+  "watch": "AI infrastructure and model serving",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://modal.com/blog"
+   }
+  ],
+  "searches": [
+   "Modal blog AI infrastructure agents"
+  ]
+ },
+ {
+  "name": "Stripe",
+  "tier": "fintech",
+  "watch": "AI, agentic commerce, payments and engineering",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://stripe.com/blog"
+   }
+  ],
+  "feed": "https://stripe.com/blog/feed.rss",
+  "searches": [
+   "site:stripe.com/blog AI agents machine learning agentic commerce"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Adyen",
+  "tier": "fintech",
+  "watch": "AI fraud, risk, authorisation and payment intelligence",
+  "links": [
+   {
+    "label": "News",
+    "url": "https://www.adyen.com/knowledge-hub"
+   }
+  ],
+  "searches": [
+   "Adyen AI fraud machine learning payments",
+   "Adyen agentic commerce AI"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Checkout.com",
+  "tier": "fintech",
+  "watch": "AI fraud, risk and payment intelligence",
+  "links": [
+   {
+    "label": "Insights",
+    "url": "https://www.checkout.com/blog"
+   }
+  ],
+  "searches": [
+   "Checkout.com AI fraud machine learning agents"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "PayPal / Braintree",
+  "tier": "fintech",
+  "watch": "AI fraud, risk, checkout and agentic commerce",
+  "links": [
+   {
+    "label": "Newsroom",
+    "url": "https://newsroom.paypal-corp.com/"
+   }
+  ],
+  "searches": [
+   "PayPal AI fraud machine learning agentic commerce",
+   "Braintree AI payments machine learning"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Block",
+  "tier": "fintech",
+  "watch": "AI in payments, risk and engineering",
+  "links": [
+   {
+    "label": "Engineering",
+    "url": "https://developer.squareup.com/blog"
+   }
+  ],
+  "searches": [
+   "Block Square engineering AI machine learning payments"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Worldpay",
+  "tier": "fintech",
+  "watch": "AI fraud, authorisation and payment operations",
+  "links": [
+   {
+    "label": "Insights",
+    "url": "https://www.worldpay.com/insights"
+   }
+  ],
+  "searches": [
+   "Worldpay AI fraud machine learning payments"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Airwallex",
+  "tier": "fintech",
+  "watch": "AI in financial operations and payments",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.airwallex.com/blog"
+   }
+  ],
+  "searches": [
+   "Airwallex AI agents machine learning payments"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "dLocal",
+  "tier": "fintech",
+  "watch": "AI fraud, risk and payment optimisation",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.dlocal.com/blog/"
+   }
+  ],
+  "searches": [
+   "dLocal AI fraud machine learning payments"
+  ],
+  "segment": "Global payment companies"
+ },
+ {
+  "name": "Harrison Chase",
+  "tier": "person",
+  "watch": "In the Loop essays, talks and agent architecture",
+  "links": [
+   {
+    "label": "In the Loop",
+    "url": "https://blog.langchain.com/tag/in-the-loop/"
+   }
+  ],
+  "searches": [
+   "Harrison Chase In the Loop LangChain agents",
+   "Harrison Chase podcast AI agents"
+  ]
+ },
+ {
+  "name": "Walden Yan",
+  "tier": "person",
+  "watch": "Cognition essays, agent architecture and context",
+  "links": [
+   {
+    "label": "Cognition",
+    "url": "https://www.cognition.ai/blog"
+   }
+  ],
+  "searches": [
+   "Walden Yan Cognition agent architecture context"
+  ]
+ },
+ {
+  "name": "Simon Willison",
+  "tier": "person",
+  "watch": "Practical AI, LLM tooling and experiments",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://simonwillison.net/"
+   }
+  ],
+  "feed": "https://simonwillison.net/atom/everything/"
+ },
+ {
+  "name": "swyx / Latent Space",
+  "tier": "person",
+  "watch": "AI engineering, agents and practitioner interviews",
+  "links": [
+   {
+    "label": "Latent Space",
+    "url": "https://www.latent.space/"
+   }
+  ],
+  "searches": [
+   "Latent Space AI engineering agents recent"
+  ]
+ },
+ {
+  "name": "Ethan Mollick",
+  "tier": "person",
+  "watch": "AI adoption, work and practical experiments",
+  "links": [
+   {
+    "label": "One Useful Thing",
+    "url": "https://www.oneusefulthing.org/"
+   }
+  ],
+  "feed": "https://www.oneusefulthing.org/feed"
+ },
+ {
+  "name": "Andrej Karpathy",
+  "tier": "person",
+  "watch": "Model architecture, coding and AI learning",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/karpathy"
+   }
+  ],
+  "searches": [
+   "Andrej Karpathy AI blog YouTube GitHub recent"
+  ]
+ },
+ {
+  "name": "Patrick McKenzie",
+  "tier": "person",
+  "watch": "AI, software businesses and financial infrastructure",
+  "links": [
+   {
+    "label": "Bits about Money",
+    "url": "https://www.bitsaboutmoney.com/"
+   }
+  ],
+  "searches": [
+   "Patrick McKenzie AI software engineering recent",
+   "Patrick McKenzie Complex Systems podcast AI"
+  ]
+ },
+ {
+  "name": "Riley Goodside",
+  "tier": "person",
+  "watch": "Prompting, model behaviour and evaluations",
+  "links": [
+   {
+    "label": "X profile",
+    "url": "https://x.com/goodside"
+   }
+  ],
+  "searches": [
+   "Riley Goodside prompt engineering AI recent"
+  ]
+ },
+ {
+  "name": "Deedy Das",
+  "tier": "person",
+  "watch": "AI engineering, startups and industry analysis",
+  "links": [
+   {
+    "label": "X profile",
+    "url": "https://x.com/deedydas"
+   }
+  ],
+  "searches": [
+   "Deedy Das AI agents engineering recent"
+  ]
+ },
+ {
+  "name": "Hugging Face Daily Papers",
+  "tier": "community",
+  "watch": "Only notable agent, memory and evaluation papers",
+  "links": [
+   {
+    "label": "Daily Papers",
+    "url": "https://huggingface.co/papers"
+   }
+  ],
+  "searches": [
+   "site:huggingface.co/papers agents memory evaluation"
+  ]
+ },
+ {
+  "name": "arXiv",
+  "tier": "community",
+  "watch": "Trending papers on agents, memory, reasoning and evaluation",
+  "links": [
+   {
+    "label": "AI papers",
+    "url": "https://arxiv.org/list/cs.AI/recent"
+   }
+  ],
+  "feed": "https://export.arxiv.org/api/query?search_query=all:%28agent%20OR%20LLM%20OR%20tool-use%20OR%20reasoning%20OR%20memory%29&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending"
+ },
+ {
+  "name": "Hacker News",
+  "tier": "community",
+  "watch": "Front-page AI engineering and research discussions",
+  "links": [
+   {
+    "label": "Front page",
+    "url": "https://news.ycombinator.com/"
+   }
+  ],
+  "searches": [
+   "Hacker News AI agents LLM research discussion"
+  ]
+ },
+ {
+  "name": "Interconnects",
+  "tier": "community",
+  "watch": "Model development, post-training and AI research analysis",
+  "links": [
+   {
+    "label": "Blog",
+    "url": "https://www.interconnects.ai/"
+   }
+  ],
+  "feed": "https://www.interconnects.ai/feed"
+ },
+ {
+  "name": "Paytm",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, machine learning, fraud detection, payments and merchant technology",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://paytm.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:paytm.com/blog AI OR machine learning OR fraud OR payments"
+  ]
+ },
+ {
+  "name": "PhonePe",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, machine learning, fraud prevention, UPI and payment infrastructure",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.phonepe.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:phonepe.com/blog AI OR machine learning OR fraud OR payments"
+  ]
+ },
+ {
+  "name": "Cashfree Payments",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, fraud and risk, payment orchestration, identity and developer infrastructure",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.cashfree.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:cashfree.com/blog AI OR machine learning OR fraud OR payments"
+  ]
+ },
+ {
+  "name": "Juspay",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "Payment infrastructure, orchestration, ML, intelligent routing and engineering",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://juspay.io/blog"
+   }
+  ],
+  "searches": [
+   "site:juspay.io/blog AI OR machine learning OR payments OR engineering"
+  ]
+ },
+ {
+  "name": "Pine Labs",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, merchant technology, payment infrastructure and agentic commerce",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.pinelabs.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:pinelabs.com/blog AI OR machine learning OR payments"
+  ]
+ },
+ {
+  "name": "PayU India",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, fraud, risk, payment technology and checkout",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.payu.in/blog"
+   }
+  ],
+  "searches": [
+   "site:payu.in/blog AI OR machine learning OR fraud"
+  ]
+ },
+ {
+  "name": "CRED",
+  "tier": "fintech",
+  "segment": "India",
+  "watch": "AI, credit, risk, payments and product engineering",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://cred.club/blog"
+   }
+  ],
+  "searches": [
+   "site:cred.club/blog AI OR machine learning OR payments"
+  ]
+ },
+ {
+  "name": "Mastercard",
+  "tier": "fintech",
+  "segment": "Global payment companies",
+  "watch": "AI, decision intelligence, fraud, cybersecurity and payment networks",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.mastercard.com/news/"
+   }
+  ],
+  "searches": [
+   "site:mastercard.com/news AI OR generative AI OR fraud OR machine learning"
+  ]
+ },
+ {
+  "name": "Visa",
+  "tier": "fintech",
+  "segment": "Global payment companies",
+  "watch": "AI, intelligent commerce, fraud, risk and payment networks",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://usa.visa.com/about-visa/newsroom.html"
+   }
+  ],
+  "searches": [
+   "site:visa.com AI agentic commerce fraud machine learning"
+  ]
+ },
+ {
+  "name": "Fiserv",
+  "tier": "fintech",
+  "segment": "Global payment companies",
+  "watch": "AI, fraud, risk, payments and financial technology infrastructure",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.fiserv.com/en/insights.html"
+   }
+  ],
+  "searches": [
+   "site:fiserv.com AI fraud machine learning payments"
+  ]
+ },
+ {
+  "name": "Sardine",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "AI-native fraud, identity, risk decisioning and financial crime",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.sardine.ai/blog"
+   }
+  ],
+  "searches": [
+   "site:sardine.ai/blog AI fraud risk"
+  ]
+ },
+ {
+  "name": "Feedzai",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "AI, machine learning, fraud prevention and financial crime",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.feedzai.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:feedzai.com/blog AI machine learning fraud"
+  ]
+ },
+ {
+  "name": "Sift",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "ML-powered fraud prevention, trust, safety and risk operations",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://sift.com/blog"
+   }
+  ],
+  "searches": [
+   "site:sift.com/blog AI machine learning fraud"
+  ]
+ },
+ {
+  "name": "Featurespace",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "Adaptive behavioural analytics, AI fraud detection and financial crime",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.featurespace.com/newsroom/"
+   }
+  ],
+  "searches": [
+   "site:featurespace.com AI fraud machine learning"
+  ]
+ },
+ {
+  "name": "Riskified",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "AI commerce protection, fraud prevention and chargeback intelligence",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.riskified.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:riskified.com/blog AI machine learning fraud"
+  ]
+ },
+ {
+  "name": "Forter",
+  "tier": "fintech",
+  "segment": "AI-led fraud and risk intelligence",
+  "watch": "AI identity intelligence, fraud prevention and commerce trust",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.forter.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:forter.com/blog AI machine learning fraud"
+  ]
+ },
+ {
+  "name": "Plaid",
+  "tier": "fintech",
+  "segment": "Fintech infrastructure",
+  "watch": "AI, financial data infrastructure, identity, risk and developer tools",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://plaid.com/blog/"
+   }
+  ],
+  "searches": [
+   "site:plaid.com/blog AI machine learning fraud"
+  ]
+ },
+ {
+  "name": "Marqeta",
+  "tier": "fintech",
+  "segment": "Fintech infrastructure",
+  "watch": "AI, card issuing, payment infrastructure, risk and developer technology",
+  "links": [
+   {
+    "label": "Blog / newsroom",
+    "url": "https://www.marqeta.com/blog"
+   }
+  ],
+  "searches": [
+   "site:marqeta.com/blog AI machine learning payments"
+  ]
+ }
 ]
 
 def parse_date(e):
