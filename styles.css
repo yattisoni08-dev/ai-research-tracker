@@ -7,3 +7,6 @@
 
 /* Fintech source directory subdivisions */
 .source-subgroup{margin:22px 0 30px}.source-subgroup>h4{font:500 12px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}.source-subgroup .source-grid{margin-top:0}
+
+/* Date-grouped unified research feed */
+.feed-day{padding:12px 0 28px}.feed-date{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0 8px;border-bottom:1px solid var(--line)}.feed-date h3{font:600 22px 'Playfair Display',serif;margin:0}.feed-date span{font:10px 'DM Mono',monospace;color:var(--muted)}.feed-day .update:first-of-type{border-top:0}
