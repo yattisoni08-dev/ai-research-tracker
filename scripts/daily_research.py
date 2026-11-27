@@ -191,11 +191,11 @@ def main():
     DB["briefing"]={"current":{"date":TODAY,**big}}
     DB.setdefault("runs",[]).append({"date":TODAY,"started_at":NOW.isoformat(),"completed_at":datetime.now(timezone.utc).isoformat(),"candidates_found":len(candidates),"items_added":len(new_items)})
     DB["runs"]=DB["runs"][-500:]
-    with open(DB_FILE,"w",encoding="utf-8") as f: json.dump(DB,f,ensure_ascii=False,indent=2); f.write("\\n")
+    with open(DB_FILE,"w",encoding="utf-8") as f: json.dump(DB,f,ensure_ascii=False,indent=2); f.write("\n")
     updates=[]
     for x in new_items:
         updates.append({"source":x["source"],"category":x["themes"][0] if x["themes"] else x["tier"],"title":x["title"],"published":x["published"],"what_happened":x["summary"],"why_it_matters":x["sowhat"],"connection":x["connection"],"url":x["url"]})
     tracker={"edition":LOCAL_NOW.strftime("%d %B %Y"),"status":"Daily research edition","sources_checked":f"{len(SOURCES)} configured sources","updates":updates,"bigger_picture":big,"debates":DB["debates"]}
-    with open(TRACKER,"w",encoding="utf-8") as f: json.dump(tracker,f,ensure_ascii=False,indent=2); f.write("\\n")
+    with open(TRACKER,"w",encoding="utf-8") as f: json.dump(tracker,f,ensure_ascii=False,indent=2); f.write("\n")
     print(f"Published {len(new_items)} new items; archive now contains {len(DB['items'])} records.")
 if __name__=="__main__": main()
