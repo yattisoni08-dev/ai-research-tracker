@@ -1,7 +1,7 @@
 name: Daily AI Research
 on:
   schedule:
-    - cron: "30 2 * * *" # 08:00 Asia/Kolkata
+    - cron: "30 2 * * *" # 08:00 Asia/Kolkata, runs indefinitely
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   research-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -22,16 +22,16 @@ jobs:
           cache: "pip"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Research and write daily edition
+      - name: Collect, analyse and publish
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
         run: python scripts/daily_research.py
-      - name: Commit daily edition
+      - name: Commit research database and edition
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/tracker.json
+          git add data/tracker.json data/research-db.json
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else
