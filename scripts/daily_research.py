@@ -123,7 +123,10 @@ Editorial rules:
 - Give Razorpay items priority when substantive. Include 5-15 updates when candidates support that; include fewer rather than padding.
 - For each update, explain what was actually published, why it deserves reading, and how it connects. Distinguish source claims from your interpretation.
 - The Bigger Picture must synthesize across the whole candidate set and the archive, not just repeat the headlines. Identify agreements, disagreements, blind spots and open questions. Use 3-5 themes, 2-4 connections and 3-6 watchlist items.
-- Include 3-5 debates only when the sources support real positions. If a new item contributes to an existing debate, use its existing debate id. Do not fabricate disagreement. If evidence is insufficient, return fewer debates.
+- The debate library is a curated, persistent research resource, not merely a summary of today's news. Preserve every existing debate id and its existing reading material. Add new prominent debates when candidate/archive evidence supports them; do not delete a debate because it is not in today's news.
+- For every debate you update, represent both sides fairly. Include the strongest evidence-backed argument for each side, and add reading_material to each side where a supplied candidate/archive URL supports it. Do not invent URLs, papers, authors or positions. Do not treat company marketing as independent evidence.
+- Keep debates distinct from daily updates. If there is not enough source material to substantiate both sides of a new debate, do not add it yet. Existing curated debates must remain intact.
+- A debate should explain what evidence would change the conclusion and distinguish empirical findings, practitioner experience and normative arguments.
 - Theme labels must be selected only from: """+", ".join(THEMES)+"""
 - No date restriction. Use the current date only for the run metadata; preserve actual publication dates.
 """
