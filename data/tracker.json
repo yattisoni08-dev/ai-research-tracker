@@ -1,60 +1,31 @@
 {
   "edition": "27 November 2026",
   "status": "Daily research edition",
-  "sources_checked": "38 configured sources",
-  "updates": [
-    {
-      "source": "swyx / Latent Space",
-      "category": "Agents & orchestration",
-      "title": "Clay's Jeff Barg says AI agents still can't fix themselves — and that's the next bottleneck for go-to-market - BigGo Finance",
-      "published": "2026-11-27",
-      "what_happened": "Jeff Barg from Clay discusses the current limitations of AI agents, particularly their inability to self-repair, which he identifies as a significant barrier to market adoption.",
-      "why_it_matters": "Understanding these limitations is crucial for developers and businesses aiming to leverage AI agents effectively in various applications.",
-      "connection": "This discussion ties into broader conversations about the capabilities and future development of AI agents, especially in the context of their deployment in commercial settings.",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6aTdTZTk3cHVxMmNzd3ZSSHRHMjNXSjZ4UmtRU1BYT3ZzcWpmMWwtOGhCR3hxa1FKdzhJVXpmYUdCeVM0ZzctQ05wZGV2RGtwM29pdENNVUZzS00?oc=5"
-    }
-  ],
+  "sources_checked": "56 configured sources",
+  "updates": [],
   "bigger_picture": {
     "headline": "Bigger picture",
-    "summary": "Recent developments highlight a significant convergence between AI agents and innovations in the payments sector. As AI agents evolve, their limitations in self-repair and ethical decision-making are becoming focal points for developers. Meanwhile, advancements in payment technologies by major players like Stripe and Adyen indicate a growing reliance on AI to enhance transaction efficiency. The integration of AI in various applications, from shopping simulations to database management, underscores the technology's expanding role in everyday operations. However, ethical considerations and the need for robust evaluation frameworks remain critical as these technologies advance.",
+    "summary": "Recent updates highlight significant advancements in AI technologies, particularly in visual reasoning and application modernization, alongside critical regulatory changes affecting international trade. The introduction of new models like AgenTAP showcases the potential for enhanced capabilities in visual tasks, while Razorpay's insights into RBI regulations emphasize the need for compliance in a rapidly evolving trade environment. The ongoing limitations of AI agents, as discussed by industry experts, point to a critical area for future development. Collectively, these items indicate a landscape where technological innovation must navigate regulatory frameworks and operational challenges.",
     "themes": [
       {
         "title": "Agents & orchestration",
-        "analysis": "The updates on AI agents from Clay and the shopping agent simulations illustrate the ongoing development and ethical considerations surrounding agent behavior."
-      },
-      {
-        "title": "AI in payments",
-        "analysis": "Innovations in payment systems by Stripe and Adyen reflect the increasing integration of AI in financial transactions, enhancing efficiency and user experience."
-      },
-      {
-        "title": "Evals & safety",
-        "analysis": "The introduction of benchmarks and tools for evaluating AI performance indicates a growing emphasis on ensuring safety and reliability in AI applications."
-      },
-      {
-        "title": "Coding agents",
-        "analysis": "The advancements in tools like sqlite3_rsync and the focus on coding agents highlight the importance of efficiency in software development."
-      },
-      {
-        "title": "Models & releases",
-        "analysis": "The improvements in model performance and fine-tuning techniques signify ongoing efforts to optimize AI capabilities for practical applications."
+        "analysis": "The discussion around AI agents' limitations and their impact on market adoption is crucial for understanding future developments in agent-based systems."
       }
     ],
     "connections": [
       {
-        "title": "AI Agent Limitations and Payment Innovations",
-        "explanation": "The discussions around AI agents' self-repair limitations connect with the innovations in payment systems, as both areas require robust solutions to enhance user trust and operational efficiency."
+        "title": "Regulatory Impact on AI Adoption",
+        "explanation": "The new trade regulations from RBI could influence how AI technologies are adopted in international trade, as businesses will need to adapt their compliance strategies."
       },
       {
-        "title": "Ethical Considerations in AI and Payments",
-        "explanation": "The ethical implications of AI decision-making in shopping simulations relate to the broader discussions on responsible AI use in payment systems, emphasizing the need for transparency and accountability."
+        "title": "Advancements in Visual Reasoning",
+        "explanation": "The emergence of models like AgenTAP could lead to new applications in fields that require precise visual analysis, impacting industries such as robotics and autonomous systems."
       }
     ],
     "watchlist": [
-      "Monitor the evolution of AI agents and their self-repair capabilities.",
-      "Observe the impact of AI on payment transaction efficiency and security.",
-      "Track developments in ethical frameworks for AI applications.",
-      "Watch for advancements in coding tools and their integration into development workflows.",
-      "Keep an eye on the adoption of new benchmarks for evaluating AI performance."
+      "Monitor the adoption of new AI models in commercial applications.",
+      "Track the impact of RBI's trade regulations on businesses using AI.",
+      "Observe developments in AI agents' self-repair capabilities."
     ]
   },
   "debates": [
