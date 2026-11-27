@@ -899,9 +899,8 @@ Editorial rules:
     r=requests.post("https://api.anthropic.com/v1/messages",headers={"x-api-key":key,"anthropic-version":"2023-06-01","content-type":"application/json"},json={"model":model,"max_tokens":24000,"temperature":0.2,"system":prompt,"messages":[{"role":"user","content":json.dumps(payload,ensure_ascii=False)}]},timeout=240)
     if not r.ok: raise RuntimeError(f"Anthropic API error {r.status_code}: {r.text[:1200]}")
     blocks=[x.get("text","") for x in r.json().get("content",[]) if x.get("type")=="text"]
-    response_text="\\n".join(blocks).strip()
-    if response_text.startswith("```"):
-        response_text=re.sub(r"^\\`\\`\\`(?:json)?\\s*|\\s*\\`\\`\\`$","",response_text,flags=re.I)
+    response_text=chr(10).join(blocks).strip()
+    if response_text.startswith("```"): response_text=chr(10).join(response_text.splitlines()[1:-1])
     try:
         return json.loads(response_text)
     except json.JSONDecodeError as ex:
