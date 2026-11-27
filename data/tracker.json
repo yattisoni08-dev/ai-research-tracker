@@ -1,85 +1,109 @@
 {
   "edition": "27 November 2026",
-  "status": "Initial curated edition",
-  "thesis": "AI is moving from answers to action. The next competitive edge will come from systems that make agents reliable: tools, permissions, evaluations, payments and human oversight.",
-  "intro": "Across research labs, developer platforms and fintech, a common pattern is emerging. Agents are being connected to real workflows. That makes reliability, control and accountability central product questions, not implementation details.",
+  "status": "Daily research edition",
+  "thesis": "Today's briefing highlights significant advancements in AI development tools, research on visual reasoning, and the implications of new fintech regulations in India.",
+  "intro": "As the landscape of AI and fintech continues to evolve, recent developments showcase innovative tools for developers and critical regulatory changes impacting global trade. This edition focuses on the intersection of technology and finance, emphasizing the importance of understanding these shifts.",
   "signals": [
     {
-      "number": "01",
-      "title": "From copilots to operators",
-      "text": "Agent workflows are moving beyond suggestions toward systems that can plan, act, inspect results and recover from errors."
+      "number": 1,
+      "title": "AI Development Tools Advancements",
+      "text": "Recent releases from Hugging Face and GitHub highlight significant advancements in AI development tools, focusing on multi-agent systems and application modernization."
     },
     {
-      "number": "02",
-      "title": "Trust is becoming infrastructure",
-      "text": "As agents touch code, customer operations and money, permissions, audit trails, evaluations and safe failure become part of the product."
+      "number": 2,
+      "title": "Visual Reasoning Research",
+      "text": "New research papers reveal breakthroughs in visual reasoning, showcasing the capabilities of vision-language models in complex tasks."
     },
     {
-      "number": "03",
-      "title": "Money is the hardest real-world test",
-      "text": "Agent-initiated payments bring the question into fintech: how can software take a financial action while keeping a human or business in control?"
+      "number": 3,
+      "title": "Fintech Regulatory Changes",
+      "text": "Razorpay's insights into RBI's new trade regulations underscore the evolving landscape for exporters and importers in India, particularly concerning compliance and operational thresholds."
     }
   ],
   "stories": [
     {
-      "category": "Agents",
-      "tag": "Workflow automation",
-      "title": "The move from copilots to agents changes how work is handed off",
-      "summary": "AI systems are increasingly designed to complete multi-step tasks using tools, rather than only generate suggestions.",
-      "why": "If agents own bounded tasks, teams need to redesign review, permissions and accountability, not simply add another assistant.",
-      "watch": "How autonomy, review gates and recovery are implemented in production.",
-      "source": "Anthropic News",
-      "url": "https://www.anthropic.com/news",
+      "category": "Developer tools",
+      "tag": "AI Tools",
+      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "summary": "Hugging Face introduces Trainium3, a new framework for generating videos using LTX-2.5, enhancing the capabilities of video generation.",
+      "why": "This advancement signifies a leap in video generation technology, which could impact various applications in media and entertainment.",
+      "watch": "Monitor how this technology evolves and its adoption in creative industries.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/video-trainium3",
       "date": "27 Nov 2026"
     },
     {
       "category": "Fintech",
-      "tag": "Agent payments",
-      "title": "Agent commerce makes identity and delegated authority essential",
-      "summary": "When software can initiate a purchase or payment, the hard questions become who authorised it, what limits apply and who is liable if it goes wrong.",
-      "why": "Agentic commerce needs identity, consent, spending controls and dispute handling, not just a new checkout interface.",
-      "watch": "Interoperable standards for agent identity, payment credentials and liability.",
-      "source": "Stripe Blog",
-      "url": "https://stripe.com/blog",
+      "tag": "Regulations",
+      "title": "RBI’s New Trade Regulations & Export Declaration Form (EDF) Rules: Everything Exporters and Importers Need to Know",
+      "summary": "Razorpay outlines the implications of RBI's new trade regulations, including changes to the Export Declaration Form and compliance requirements.",
+      "why": "Understanding these regulations is crucial for businesses engaged in international trade, affecting operational strategies and compliance.",
+      "watch": "Keep an eye on how these regulations impact trade flows and compliance strategies among businesses.",
+      "source": "Razorpay",
+      "url": "https://razorpay.com/blog/rbis-new-trade-regulations-edf-rules/",
+      "date": "27 Nov 2026"
+    },
+    {
+      "category": "Research",
+      "tag": "Visual Reasoning",
+      "title": "Tracking Any Point with Agentic Visual Reasoning",
+      "summary": "AgenTAP, a new vision-language model, excels in point localization and visibility prediction, surpassing expert models.",
+      "why": "This research highlights the potential of VLMs in complex visual reasoning tasks, which could revolutionize fields requiring precise visual analysis.",
+      "watch": "Observe the applications of this technology in robotics and autonomous systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.34943v1",
+      "date": "27 Nov 2026"
+    },
+    {
+      "category": "Research",
+      "tag": "Visual Reasoning",
+      "title": "Can image generation help visual reasoning? An empirical study",
+      "summary": "This study investigates the impact of generated images on the performance of visual reasoning tasks, revealing mixed results.",
+      "why": "Understanding the relationship between image generation and visual reasoning can inform future model designs and applications.",
+      "watch": "Follow developments in multimodal models and their effectiveness in various tasks.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.34935v1",
       "date": "27 Nov 2026"
     },
     {
       "category": "Developer tools",
-      "tag": "Agent frameworks",
-      "title": "Agent frameworks are making orchestration a first-class engineering problem",
-      "summary": "As systems move beyond a single prompt loop, developers need explicit control flow for tool choice, routing, retries and hand-offs.",
-      "why": "The quality of orchestration increasingly determines latency, cost, observability and reliability.",
-      "watch": "How frameworks expose state, tool permissions and evaluation hooks.",
-      "source": "AWS Machine Learning Blog",
-      "url": "https://aws.amazon.com/blogs/machine-learning/",
+      "tag": "AI Tools",
+      "title": "How to choose the next safe step in application modernization",
+      "summary": "GitHub provides insights on assessing legacy applications and choosing modernization steps using GitHub Copilot.",
+      "why": "This guidance is essential for developers looking to modernize applications efficiently and safely.",
+      "watch": "Watch for trends in application modernization strategies among enterprises.",
+      "source": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
       "date": "27 Nov 2026"
     }
   ],
   "debates": [
     {
-      "question": "How much autonomy should an agent get?",
-      "position": "The useful unit of autonomy is a bounded task with explicit permissions, observable steps and a clear escalation path.",
-      "tension": "More autonomy reduces friction, but increases the blast radius of mistakes.",
-      "signals": "Approval gates, reversible actions, audit logs and task-level evaluations."
+      "question": "How do we balance innovation in AI with ethical considerations?",
+      "position": "Innovation should not compromise ethical standards.",
+      "tension": "The rapid pace of AI development often outstrips ethical guidelines, leading to potential misuse.",
+      "signals": {
+        "number": 1,
+        "title": "AI Development Tools Advancements",
+        "text": "The introduction of new AI tools raises questions about their ethical use."
+      }
     },
     {
-      "question": "Is agent memory an advantage or a liability?",
-      "position": "Memory is valuable only when systems can explain where it came from, test whether it is still valid and correct it when wrong.",
-      "tension": "Personalisation and continuity can compound both good and bad information.",
-      "signals": "Provenance, confidence, expiry, correction and rollback."
-    },
-    {
-      "question": "Will agent commerce become mainstream?",
-      "position": "It will likely grow first in narrow, repeatable transactions where identity, limits and dispute handling are clear.",
-      "tension": "Convenience is compelling, but consumers and merchants need to know who authorised the purchase.",
-      "signals": "Delegated payment standards, spend controls and liability frameworks."
+      "question": "What is the impact of regulatory changes on fintech innovation?",
+      "position": "Regulations can stifle innovation but are necessary for consumer protection.",
+      "tension": "While regulations aim to protect users, they can also hinder the agility of fintech startups.",
+      "signals": {
+        "number": 3,
+        "title": "Fintech Regulatory Changes",
+        "text": "RBI's new regulations may impact how fintech companies operate."
+      }
     }
   ],
   "watchlist": [
-    "Can agents recover reliably when a tool call or workflow fails?",
-    "Which financial actions will require explicit human approval?",
-    "Will agent identity and delegated authority become interoperable standards?",
-    "Can evaluation move from benchmark success to production reliability?",
-    "How will companies measure real cost saved per completed task?"
+    "Monitor advancements in video generation technologies.",
+    "Track the impact of RBI's trade regulations on exporters.",
+    "Observe developments in visual reasoning capabilities of AI models.",
+    "Follow trends in application modernization strategies.",
+    "Watch for ethical discussions surrounding AI innovations."
   ]
 }
