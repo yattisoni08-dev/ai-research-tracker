@@ -1,10 +1,12 @@
 name: Daily AI Research
 on:
   schedule:
-    - cron: "30 2 * * *" # 08:00 Asia/Kolkata, runs indefinitely
+    - cron: "30 2 * * *" # 08:00 Asia/Kolkata
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
   group: daily-ai-research
   cancel-in-progress: false
@@ -38,12 +40,15 @@ jobs:
             git commit -m "Publish daily AI research edition"
             git push
           fi
-      - name: Trigger Netlify deploy hook (optional)
-        env:
-          NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+      - name: Prepare static site
         run: |
-          if [ -n "$NETLIFY_BUILD_HOOK_URL" ]; then
-            curl --fail --silent --show-error -X POST "$NETLIFY_BUILD_HOOK_URL"
-          else
-            echo "No Netlify build hook configured; skipping."
-          fi
+          mkdir -p _site/data
+          cp index.html styles.css app.js _site/
+          cp data/tracker.json data/research-db.json _site/data/
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
