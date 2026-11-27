@@ -1,83 +1,60 @@
 {
   "edition": "27 November 2026",
-  "status": "Awaiting first expanded research run",
-  "sources_checked": "Expanded source registry will be checked on the next scheduled run",
+  "status": "Daily research edition",
+  "sources_checked": "38 configured sources",
   "updates": [
     {
-      "source": "Hugging Face",
-      "category": "Developer tools",
-      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
-      "published": "27 Nov 2026",
-      "what_happened": "Hugging Face introduces Trainium3, a new framework for generating videos using LTX-2.5, enhancing the capabilities of video generation.",
-      "why_it_matters": "This advancement signifies a leap in video generation technology, which could impact various applications in media and entertainment.",
-      "connection": "Monitor how this technology evolves and its adoption in creative industries.",
-      "url": "https://huggingface.co/blog/video-trainium3"
-    },
-    {
-      "source": "Razorpay",
-      "category": "Fintech",
-      "title": "RBI’s New Trade Regulations & Export Declaration Form (EDF) Rules: Everything Exporters and Importers Need to Know",
-      "published": "27 Nov 2026",
-      "what_happened": "Razorpay outlines the implications of RBI's new trade regulations, including changes to the Export Declaration Form and compliance requirements.",
-      "why_it_matters": "Understanding these regulations is crucial for businesses engaged in international trade, affecting operational strategies and compliance.",
-      "connection": "Keep an eye on how these regulations impact trade flows and compliance strategies among businesses.",
-      "url": "https://razorpay.com/blog/rbis-new-trade-regulations-edf-rules/"
-    },
-    {
-      "source": "arXiv",
-      "category": "Research",
-      "title": "Tracking Any Point with Agentic Visual Reasoning",
-      "published": "27 Nov 2026",
-      "what_happened": "AgenTAP, a new vision-language model, excels in point localization and visibility prediction, surpassing expert models.",
-      "why_it_matters": "This research highlights the potential of VLMs in complex visual reasoning tasks, which could revolutionize fields requiring precise visual analysis.",
-      "connection": "Observe the applications of this technology in robotics and autonomous systems.",
-      "url": "https://arxiv.org/abs/2611.34943v1"
-    },
-    {
-      "source": "arXiv",
-      "category": "Research",
-      "title": "Can image generation help visual reasoning? An empirical study",
-      "published": "27 Nov 2026",
-      "what_happened": "This study investigates the impact of generated images on the performance of visual reasoning tasks, revealing mixed results.",
-      "why_it_matters": "Understanding the relationship between image generation and visual reasoning can inform future model designs and applications.",
-      "connection": "Follow developments in multimodal models and their effectiveness in various tasks.",
-      "url": "https://arxiv.org/abs/2611.34935v1"
-    },
-    {
-      "source": "GitHub Blog",
-      "category": "Developer tools",
-      "title": "How to choose the next safe step in application modernization",
-      "published": "27 Nov 2026",
-      "what_happened": "GitHub provides insights on assessing legacy applications and choosing modernization steps using GitHub Copilot.",
-      "why_it_matters": "This guidance is essential for developers looking to modernize applications efficiently and safely.",
-      "connection": "Watch for trends in application modernization strategies among enterprises.",
-      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/"
+      "source": "swyx / Latent Space",
+      "category": "Agents & orchestration",
+      "title": "Clay's Jeff Barg says AI agents still can't fix themselves — and that's the next bottleneck for go-to-market - BigGo Finance",
+      "published": "2026-11-27",
+      "what_happened": "Jeff Barg from Clay discusses the current limitations of AI agents, particularly their inability to self-repair, which he identifies as a significant barrier to market adoption.",
+      "why_it_matters": "Understanding these limitations is crucial for developers and businesses aiming to leverage AI agents effectively in various applications.",
+      "connection": "This discussion ties into broader conversations about the capabilities and future development of AI agents, especially in the context of their deployment in commercial settings.",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6aTdTZTk3cHVxMmNzd3ZSSHRHMjNXSjZ4UmtRU1BYT3ZzcWpmMWwtOGhCR3hxa1FKdzhJVXpmYUdCeVM0ZzctQ05wZGV2RGtwM29pdENNVUZzS00?oc=5"
     }
   ],
   "bigger_picture": {
     "headline": "Bigger picture",
-    "summary": "As the landscape of AI and fintech continues to evolve, recent developments showcase innovative tools for developers and critical regulatory changes impacting global trade. This edition focuses on the intersection of technology and finance, emphasizing the importance of understanding these shifts.",
+    "summary": "Recent developments highlight a significant convergence between AI agents and innovations in the payments sector. As AI agents evolve, their limitations in self-repair and ethical decision-making are becoming focal points for developers. Meanwhile, advancements in payment technologies by major players like Stripe and Adyen indicate a growing reliance on AI to enhance transaction efficiency. The integration of AI in various applications, from shopping simulations to database management, underscores the technology's expanding role in everyday operations. However, ethical considerations and the need for robust evaluation frameworks remain critical as these technologies advance.",
     "themes": [
       {
-        "title": "AI Development Tools Advancements",
-        "analysis": "Recent releases from Hugging Face and GitHub highlight significant advancements in AI development tools, focusing on multi-agent systems and application modernization."
+        "title": "Agents & orchestration",
+        "analysis": "The updates on AI agents from Clay and the shopping agent simulations illustrate the ongoing development and ethical considerations surrounding agent behavior."
       },
       {
-        "title": "Visual Reasoning Research",
-        "analysis": "New research papers reveal breakthroughs in visual reasoning, showcasing the capabilities of vision-language models in complex tasks."
+        "title": "AI in payments",
+        "analysis": "Innovations in payment systems by Stripe and Adyen reflect the increasing integration of AI in financial transactions, enhancing efficiency and user experience."
       },
       {
-        "title": "Fintech Regulatory Changes",
-        "analysis": "Razorpay's insights into RBI's new trade regulations underscore the evolving landscape for exporters and importers in India, particularly concerning compliance and operational thresholds."
+        "title": "Evals & safety",
+        "analysis": "The introduction of benchmarks and tools for evaluating AI performance indicates a growing emphasis on ensuring safety and reliability in AI applications."
+      },
+      {
+        "title": "Coding agents",
+        "analysis": "The advancements in tools like sqlite3_rsync and the focus on coding agents highlight the importance of efficiency in software development."
+      },
+      {
+        "title": "Models & releases",
+        "analysis": "The improvements in model performance and fine-tuning techniques signify ongoing efforts to optimize AI capabilities for practical applications."
       }
     ],
-    "connections": [],
+    "connections": [
+      {
+        "title": "AI Agent Limitations and Payment Innovations",
+        "explanation": "The discussions around AI agents' self-repair limitations connect with the innovations in payment systems, as both areas require robust solutions to enhance user trust and operational efficiency."
+      },
+      {
+        "title": "Ethical Considerations in AI and Payments",
+        "explanation": "The ethical implications of AI decision-making in shopping simulations relate to the broader discussions on responsible AI use in payment systems, emphasizing the need for transparency and accountability."
+      }
+    ],
     "watchlist": [
-      "Monitor advancements in video generation technologies.",
-      "Track the impact of RBI's trade regulations on exporters.",
-      "Observe developments in visual reasoning capabilities of AI models.",
-      "Follow trends in application modernization strategies.",
-      "Watch for ethical discussions surrounding AI innovations."
+      "Monitor the evolution of AI agents and their self-repair capabilities.",
+      "Observe the impact of AI on payment transaction efficiency and security.",
+      "Track developments in ethical frameworks for AI applications.",
+      "Watch for advancements in coding tools and their integration into development workflows.",
+      "Keep an eye on the adoption of new benchmarks for evaluating AI performance."
     ]
   },
   "debates": []

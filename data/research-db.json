@@ -599,6 +599,23 @@
       "sowhat": "This guidance is essential for developers looking to modernize applications efficiently and safely.",
       "connection": "Watch for trends in application modernization strategies among enterprises.",
       "themes": []
+    },
+    {
+      "id": "swyx-latent-space-clay-s-jeff-barg-says-ai-agents-still-can-t-fix-them",
+      "tier": "person",
+      "priority": false,
+      "source": "swyx / Latent Space",
+      "author": "",
+      "published": "2026-11-27",
+      "added": "2026-11-27",
+      "title": "Clay's Jeff Barg says AI agents still can't fix themselves — and that's the next bottleneck for go-to-market - BigGo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6aTdTZTk3cHVxMmNzd3ZSSHRHMjNXSjZ4UmtRU1BYT3ZzcWpmMWwtOGhCR3hxa1FKdzhJVXpmYUdCeVM0ZzctQ05wZGV2RGtwM29pdENNVUZzS00?oc=5",
+      "summary": "Jeff Barg from Clay discusses the current limitations of AI agents, particularly their inability to self-repair, which he identifies as a significant barrier to market adoption.",
+      "sowhat": "Understanding these limitations is crucial for developers and businesses aiming to leverage AI agents effectively in various applications.",
+      "connection": "This discussion ties into broader conversations about the capabilities and future development of AI agents, especially in the context of their deployment in commercial settings.",
+      "themes": [
+        "Agents & orchestration"
+      ]
     }
   ],
   "seen_urls": [
@@ -606,11 +623,119 @@
     "https://razorpay.com/blog/rbis-new-trade-regulations-edf-rules/",
     "https://arxiv.org/abs/2611.34943v1",
     "https://arxiv.org/abs/2611.34935v1",
-    "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/"
+    "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6aTdTZTk3cHVxMmNzd3ZSSHRHMjNXSjZ4UmtRU1BYT3ZzcWpmMWwtOGhCR3hxa1FKdzhJVXpmYUdCeVM0ZzctQ05wZGV2RGtwM29pdENNVUZzS00?oc=5",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TbnkyOHFTd3NvLS11Q1U3dm9vV1ZHU1pkZHRoZmFpYWtaZ2ROSE1rZmVwWlBHYVhwak1STFpha1RmU0VrQjJFa0puSEUwTjJ4UWpkc3l4eUw2WURjcDVR?oc=5",
+    "https://news.google.com/rss/articles/CBMikgFBVV95cUxObTR2MFFVTVhPMWFQT1BNck4zdWFmb3FBZUFXSDE4N0k1dElCU1dWZXpfMWtPNEI2UG5zY0IyajkwQXRGTDg5V3VTVDU4SllKeWtaUFNjajJPLU1oZ3lmdnZRbDJQX3dxMEJidHJtMXZRdHRtRXB1UWRDandid0xESENXMDQyY2FPUU95SzFvcG5jQQ?oc=5",
+    "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA3ektxeVIzYmFnY0hjNmdQU3RLc29MREpJSFNyT3l5blpYdUhKQUlpUUQ4dks5V2ZVamZtZDFFVm1oNWx1cnpaNmxLLWtyQUd6SWhvZ0Z3ZUYzeTItT2hv?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE5JazVZMzY3emJZa1NsTmJjVFJqVndjZkNSTmtvUzJFalhQTmJnQm9VNmxkTlNtVm1zOGphTERVaFJ2Q0FPOWV2d25Va0pGSmdXcV9rQlduMzVIdWJkXzBCLUVVN3lzbXFKUGNQSEp2a2ZSUjY0ZlJ6bnRn?oc=5",
+    "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdWJYN25yX3VTNk91UTkyQXlQOUJSVFNCLUlXOUhDTzV3SjZEQ3dRYVg5QVg4cjdCT1RJam1zX3lhQkxQMDd6T2NtX05ZazVLaWZlWWlfUEFETGUxUUJZYlRmeXhzX0NwWHJXWk14UzA0Q0drVGhsR1RVUW9mbzdtSU1zQ3UwNC1KRUFqbDlOOA?oc=5",
+    "https://simonwillison.net/2026/Nov/26/sqlite3-rsync/",
+    "https://simonwillison.net/2026/Nov/26/hn-50651685/",
+    "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+    "https://huggingface.co/blog/training-swarms",
+    "https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+    "https://arxiv.org/abs/2611.34934v1",
+    "https://arxiv.org/abs/2611.34932v1",
+    "https://arxiv.org/abs/2611.34928v1",
+    "https://arxiv.org/abs/2611.34925v1",
+    "https://arxiv.org/abs/2611.34923v1",
+    "https://arxiv.org/abs/2611.34920v1",
+    "https://arxiv.org/abs/2611.34915v1",
+    "https://arxiv.org/abs/2611.34907v1",
+    "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+    "https://arxiv.org/abs/2611.34884v1",
+    "https://arxiv.org/abs/2611.34875v1",
+    "https://arxiv.org/abs/2611.34870v1",
+    "https://arxiv.org/abs/2611.34868v1",
+    "https://arxiv.org/abs/2611.34864v1",
+    "https://arxiv.org/abs/2611.34863v1",
+    "https://arxiv.org/abs/2611.34852v1",
+    "https://arxiv.org/abs/2611.34849v1",
+    "https://arxiv.org/abs/2611.34848v1",
+    "https://arxiv.org/abs/2611.34840v1",
+    "https://simonwillison.net/2026/Nov/25/datasette-charts/",
+    "https://arxiv.org/abs/2611.34832v1",
+    "https://arxiv.org/abs/2611.34825v1",
+    "https://arxiv.org/abs/2611.34823v1",
+    "https://arxiv.org/abs/2611.34819v1",
+    "https://arxiv.org/abs/2611.34818v1",
+    "https://arxiv.org/abs/2611.34813v1",
+    "https://arxiv.org/abs/2611.34785v1",
+    "https://arxiv.org/abs/2611.34783v1",
+    "https://arxiv.org/abs/2611.34778v1",
+    "https://arxiv.org/abs/2611.34777v1",
+    "https://arxiv.org/abs/2611.34776v1",
+    "https://arxiv.org/abs/2611.34770v1",
+    "https://arxiv.org/abs/2611.34762v1",
+    "https://arxiv.org/abs/2611.34760v1",
+    "https://arxiv.org/abs/2611.34757v1",
+    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPcWpnakdTT1VLUGNmU2VTby00QlRFUlJLVjdiYi1idndjOHBTV2lkQUEtajlHQnJCVWIxdHI1dGZYbFRCbVozTVh6dXBVblpCd1piZzJwMmY2T2dReFJQd0FHTnhyWHc1UG5QTWxSMGVhd2t3TTNjZWRpbHN6NTFLU19Db2hCTmFNc0ZMZ29FS3BtZnFiVi1JLU1KZjN3dTl4Nm9OTjF5YllHY2VqYy1KWnhCWTlIcGFscHhYVEcwdmlpWEZ5VFlSaVFsSl9tVmNrSVRwXzZnZkM0Rm1CYkRYaQ?oc=5",
+    "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+    "https://vercel.com/changelog/standard-builds-for-existing-pro-teams-have-moved-to-usage-based-billing",
+    "https://vercel.com/blog/how-cozey-turns-its-operators-into-software-builders-on-vercel",
+    "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+    "https://vercel.com/changelog/workflows-speculative-execution",
+    "https://simonwillison.net/2026/Nov/24/llm-inflection-points/",
+    "https://vercel.com/changelog/all-sandbox-runtimes-now-use-vercel-managed-images",
+    "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/"
   ],
   "debates": [],
-  "runs": [],
+  "runs": [
+    {
+      "date": "2026-11-27",
+      "started_at": "2026-11-27T16:49:54.820245+00:00",
+      "completed_at": "2026-11-27T16:50:43.344943+00:00",
+      "candidates_found": 57,
+      "items_added": 1
+    }
+  ],
   "briefing": {
-    "current": {}
+    "current": {
+      "date": "2026-11-27",
+      "headline": "Bigger picture",
+      "summary": "Recent developments highlight a significant convergence between AI agents and innovations in the payments sector. As AI agents evolve, their limitations in self-repair and ethical decision-making are becoming focal points for developers. Meanwhile, advancements in payment technologies by major players like Stripe and Adyen indicate a growing reliance on AI to enhance transaction efficiency. The integration of AI in various applications, from shopping simulations to database management, underscores the technology's expanding role in everyday operations. However, ethical considerations and the need for robust evaluation frameworks remain critical as these technologies advance.",
+      "themes": [
+        {
+          "title": "Agents & orchestration",
+          "analysis": "The updates on AI agents from Clay and the shopping agent simulations illustrate the ongoing development and ethical considerations surrounding agent behavior."
+        },
+        {
+          "title": "AI in payments",
+          "analysis": "Innovations in payment systems by Stripe and Adyen reflect the increasing integration of AI in financial transactions, enhancing efficiency and user experience."
+        },
+        {
+          "title": "Evals & safety",
+          "analysis": "The introduction of benchmarks and tools for evaluating AI performance indicates a growing emphasis on ensuring safety and reliability in AI applications."
+        },
+        {
+          "title": "Coding agents",
+          "analysis": "The advancements in tools like sqlite3_rsync and the focus on coding agents highlight the importance of efficiency in software development."
+        },
+        {
+          "title": "Models & releases",
+          "analysis": "The improvements in model performance and fine-tuning techniques signify ongoing efforts to optimize AI capabilities for practical applications."
+        }
+      ],
+      "connections": [
+        {
+          "title": "AI Agent Limitations and Payment Innovations",
+          "explanation": "The discussions around AI agents' self-repair limitations connect with the innovations in payment systems, as both areas require robust solutions to enhance user trust and operational efficiency."
+        },
+        {
+          "title": "Ethical Considerations in AI and Payments",
+          "explanation": "The ethical implications of AI decision-making in shopping simulations relate to the broader discussions on responsible AI use in payment systems, emphasizing the need for transparency and accountability."
+        }
+      ],
+      "watchlist": [
+        "Monitor the evolution of AI agents and their self-repair capabilities.",
+        "Observe the impact of AI on payment transaction efficiency and security.",
+        "Track developments in ethical frameworks for AI applications.",
+        "Watch for advancements in coding tools and their integration into development workflows.",
+        "Keep an eye on the adoption of new benchmarks for evaluating AI performance."
+      ]
+    }
   }
 }
